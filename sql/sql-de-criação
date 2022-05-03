@@ -1,0 +1,15 @@
+create database indoor_games;
+use indoor_games;
+create table times(
+	time_id int not null PRIMARY KEY AUTO_INCREMENT,
+    time_nome varchar(150) not null
+);
+
+create table jogadores(
+	jogador_id int not null PRIMARY KEY AUTO_INCREMENT,
+    jogador_nome varchar(120) not null,
+    jogador_cpf varchar(50) not null,
+    jogador_time_id int not null,
+    foreign key (jogador_time_id) references times(time_id)
+);
+
