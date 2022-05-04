@@ -8,6 +8,7 @@
         private $senha   ='';
 
         public function conectar(){
+
             try{
                 $objConexao = new PDO(
                     "mysql:host=$this->host;dbname=$this->dbname",
@@ -19,6 +20,7 @@
                 echo "Erro ".$e->getCode() ."Mensagem ". $e->getMessage();
             }
 
+            
         }
     }
 
