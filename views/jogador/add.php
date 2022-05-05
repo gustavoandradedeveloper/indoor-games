@@ -8,7 +8,7 @@
 </head>
 <body>
     <div>
-        <form action="../../controllers/jogadorController.php" method="post">
+        <form action="../../controllers/JogadorController.php?metodo=inserir" method="post">
             <fieldset>
 
                 <label for="">Nome</label>

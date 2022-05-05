@@ -12,7 +12,7 @@
         }
             
         
-        public function inserir(){
+        public function inserirJogador(){
             try{
                 $sql = 'insert into jogadores (
                     jogador_nome, jogador_cpf , jogador_time_id 
@@ -33,17 +33,37 @@
         }
 
 
-        public function listar(){
+        public function listarJogador(){
+            $sql='
+                select * from jogadores;
+            ';
 
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->execute();
+            $listaJogadores = $stmt->fetchAll(PDO::FETCH_OBJ);
+            return $listaJogadores;
         }
 
 
-        public function atualizar(){
-
+        public function editarJogador($jogador_id){
+            $sql='
+                select 
+                    * 
+                from 
+                    jogadores 
+                where
+                    jogador_id = :jogador_id
+            ';
+            
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->bindValue(':jogador_id',$jogador_id);
+            $stmt->execute();
+            $jogador = $stmt->fetch(PDO::FETCH_OBJ);
+            return $jogador;
         }
 
         
-        public function deletar(){
+        public function deletarJogador(){
 
         }
 
