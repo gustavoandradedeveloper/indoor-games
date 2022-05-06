@@ -1,3 +1,9 @@
+<?php
+  
+    session_start();
+    $jogador = $_SESSION['jogadorSelecionado'];
+    $listaTimes = $_SESSION['listaTimes'];
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -22,12 +28,17 @@
 
                 <label for="">Escolhar o time</label>
                 <select name="txtTimeId">
-                    <option value="1">Náutico</option>
-                    <option value="2">Sport</option>
-                    <option value="3">Santa Cruz</option>
+                    <?php foreach($listaTimes as $time ){?>
+
+                        <option value="<?= $time->time_id?>">
+                            <?= $time->time_nome?>
+                        </option>
+                        
+                        <?php }?>
                 </select><br><br>
 
                 <input type="submit" value="cadastrar">
+                <a href="../../index.php">voltar</a>
             </fieldset>
         </form>
     </div>

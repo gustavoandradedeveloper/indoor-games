@@ -2,8 +2,8 @@
 
     class Jogadores {
         private $jogador_id;
-        private $jogador_cpf;
         private $jogador_nome;
+        private $jogador_cpf;
         private $jogador_time_id;
 
         public function __get($atributo){

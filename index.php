@@ -12,6 +12,7 @@
             <h4>
                 HOME
             </h4>
-            <a  href="views/jogador/add.php" class="link-menu">Cadastrar Jogador</a>
+            <a  href="views/jogador/add.php" class="link-menu">Cadastrar Jogador</a><br>
+            <a  href="controllers/JogadorController.php?metodo=atualizar" class="link-menu">Listar Jogador</a>
     </body>
 </html>

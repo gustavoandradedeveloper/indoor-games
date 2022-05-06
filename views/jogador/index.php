@@ -1,6 +1,8 @@
 <?php 
     session_start();
-    $listaJogadores = $_SESSION['listaJogadores']
+    $listaJogadores = $_SESSION['listaatualizada'];
+
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -34,14 +36,14 @@
                     
                     <td><?= $jogador->jogador_nome?></td>
                     <td><?= $jogador->jogador_cpf?></td>
-                    <td><?= $jogador->jogador_time_id?></td>
+                    <td><?= $jogador->time_nome?></td>
 
                     <td>
                         <a href="<?php echo"../../controllers/JogadorController.php?editar=".$jogador->jogador_id?>">Editar</a>
                     </td>
                     
                     <td>
-                        <a href="<?php echo"del.php?excluir=".$jogador->jogador_id?>">Excluir</a>
+                        <a href="<?php echo"../../controllers/JogadorController.php?excluir=".$jogador->jogador_id?>">Excluir</a>
                     </td>
                     
                 </tr>

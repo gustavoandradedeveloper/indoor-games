@@ -41,6 +41,7 @@
             return $listatimes;
         }
 
+        
 
         public function editarTime($time_id){
             $sql='
@@ -51,7 +52,6 @@
                 where
                     time_id = :time_id
             ';
-            
             $stmt = $this->conexao->prepare($sql);
             $stmt->bindValue(':time_id',$time_id);
             $stmt->execute();

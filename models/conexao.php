@@ -11,7 +11,7 @@
 
             try{
                 $objConexao = new PDO(
-                    "mysql:host=$this->host;dbname=$this->dbname",
+                    "mysql:host=$this->host;dbname=$this->dbname;charset=utf8",
                     "$this->usuario",
                     "$this->senha"
                 );

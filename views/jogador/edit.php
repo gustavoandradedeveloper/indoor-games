@@ -1,11 +1,8 @@
 <?php
+  
     session_start();
     $jogador = $_SESSION['jogadorSelecionado'];
     $listaTimes = $_SESSION['listaTimes'];
-    echo '<pre>';
-    print_r($_SESSION['listaTimes']);
-    echo '</pre>'; 
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,7 +14,7 @@
 </head>
 <body>
     <div>
-        <form action="../../controllers/JogadorController.php?metodo=inserir" method="post">
+        <form action="../../controllers/JogadorController.php?metodo=atualizar" method="post">
             <fieldset>
                 
                 <label for="">Nome</label>
@@ -26,19 +23,22 @@
 
                 <label for="">CPF</label>
                 <input type="text" name="txtCpf" value="<?= $jogador->jogador_cpf?>"><br><br>
-
+                
                 
 
                 <label for="">Escolhar o time</label>
                 <select name="txtTimeId">
                     <?php foreach($listaTimes as $time ){?>
-             
-                        <option value="<?= $time->time_id?>"><?= $time->time_nome?></option>
+
+                        <option value="<?= $time->time_id?>">
+                            <?= $time->time_nome?>
+                        </option>
                         
                         <?php }?>
                 </select><br><br>
-
-                <input type="submit" value="Atualizar">
+                    <input type="hidden" name="txtId" value="<?= $jogador->jogador_id?>">
+                    <input type="submit" value="Atualizar"><br>
+                    <a href="../../index.php">voltar</a>
             </fieldset>
         </form>
     </div>

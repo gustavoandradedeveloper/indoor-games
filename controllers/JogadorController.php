@@ -21,18 +21,24 @@
       function escolha($var){
         
         switch($var){
-
           case 'inserir':
-            $this->inserirJogador();
+              $this->inserirJogador();
             break;
           
           case 'listar':
-            $this->listarJogador();
+              $this->listarJogador();
             break;
 
           case 'editar':
-            $this->editarJogador();
+              $this->editarJogador();
             break;
+
+          case 'atualizar':
+              $this->atualizarJogador();
+            break;
+          case 'excluir':
+            $this->deletarJogador();
+          break;
         }
     
       }
@@ -48,8 +54,8 @@
         $objJogadorService = new JogadorService($objConexao,$objJogador);
         $objJogadorService->inserirJogador();
         print_r($objJogadorService);
-        //header('location: ../views/jogador/index.php?inserido=1');
-        $this->listarJogador($_GET['inserido']=1); 
+        header('location: ../index.php?inserido=1');
+        
       }
 
 
@@ -78,22 +84,52 @@
 
         $jogador_id = $_GET['editar'];
         $jogador = $objJogadorService->editarJogador($jogador_id);
-        
-        /* echo'<pre>';
-        print_r($listaTimes);
-        echo '</pre>'; */
- 
+      
         $_SESSION['jogadorSelecionado'] = $jogador;
         $_SESSION['listaTimes'] = $listaTimes;
         header('location:../views/jogador/edit.php');
       }
 
 
+      public function atualizarJogador(){
+          $objConexao = new Conexao();
+          $objJogador = new Jogadores();     
+
+          $objJogador->__set('jogador_nome',$_POST['txtNome']);
+          $objJogador->__set('jogador_cpf',$_POST['txtCpf']);
+          $objJogador->__set('jogador_time',$_POST['txtTimeId']);
+          $objJogador->__set('jogador_id',$_POST['txtId']);
+          
+
+          $objJogadorService = new JogadorService($objConexao,$objJogador);
+         
+      
+          $listaatualizada =$objJogadorService->atualizarJogador($objJogador);
+          /* echo'<pre>'; 
+          print_r($listaatualizada);
+          echo'</pre>';  */
+          $_SESSION['listaatualizada'] = $listaatualizada;
+          header('location: ../views/jogador/index.php');
+          
+
+      }
+
+
+
 
 
       function deletarJogador(){
+          $n = $_GET['excluir'];
+          $objConexao = new Conexao();
+          $objJogador = new Jogadores(); 
+          $objJogadorService = new JogadorService($objConexao,$objJogador);
+          $retorno = $objJogadorService->deletarJogador($n);
+          $_SESSION['listaatualizada'] = $retorno;
+          header('location: ../views/jogador/index.php');
 
       }
+
+
     
   }
 
@@ -106,6 +142,8 @@
 
       $metodo = 'editar';
       
+    }else if(isset($_GET['excluir'])){
+      $metodo = 'excluir';
     }
 
   $objJogadorController = new JogadorController($metodo);
