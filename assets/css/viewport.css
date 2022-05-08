@@ -4,20 +4,21 @@
 
     .header-titulo
     {
-        font-size: 50px;
+        font-size: 45px;
         height: 70px;
+        padding: 9px;
     }
 
 
     .header-menu
     {
-        height: 25px;
+        height: 33px;
     }
 
     
     .header-content ul li
     {
-        font-size: 15px;
+        font-size: 20px;
         padding: 5px;
     }
 
@@ -37,22 +38,24 @@
 
     .header-titulo
     {
-        font-size: 20px;
+        font-size: 45px;
         height: 70px;
+        padding: 9px;
     }
 
 
     .header-menu
     {
-        height: 25px;
+        height: 33px;
     }
 
     
     .header-content ul li
     {
-        font-size: 15px;
+        font-size: 20px;
         padding: 5px;
     }
+
 
 }
 
@@ -69,22 +72,25 @@
 
     .header-titulo
     {
-        font-size: 80px;
+        font-size: 45px;
         height: 70px;
+        padding: 9px;
     }
 
 
     .header-menu
     {
-        height: 25px;
+        height: 33px;
     }
 
     
     .header-content ul li
     {
-        font-size: 15px;
-        padding: 5px;
+        font-size: 20px;
+        padding: 4px;
     }
+
+
 
 }
 
@@ -101,20 +107,21 @@
 
     .header-titulo
     {
-        font-size: 30px;
+        font-size: 45px;
         height: 70px;
+        padding: 9px;
     }
 
 
     .header-menu
     {
-        height: 25px;
+        height: 33px;
     }
 
     
     .header-content ul li
     {
-        font-size: 15px;
+        font-size: 20px;
         padding: 5px;
     }
 
@@ -133,17 +140,23 @@
 @media(max-width:960px){
     .header-titulo
     {
-        font-size: 26px;
-        height: 63px;
+        font-size: 42px;
+        height: 70px;
+        padding: 10px;
     }
 
 
     .header-menu
     {
-        height: 20px;
+        height: 33px;
     }
 
-
+    
+    .header-content ul li
+    {
+        font-size: 20px;
+        padding: 5px;
+    }
 }
 
 
@@ -159,17 +172,23 @@
 @media(max-width:900px){
     .header-titulo
     {
-        font-size: 26px;
-        height: 63px;
+        font-size: 42px;
+        height: 70px;
+        padding: 10px;
     }
 
 
     .header-menu
     {
-        height: 20px;
+        height: 33px;
     }
 
-
+    
+    .header-content ul li
+    {
+        font-size: 20px;
+        padding: 5px;
+    }
 }
 
 
@@ -185,21 +204,22 @@
 @media(max-width:768px){ 
     .header-titulo
     {
-        font-size: 25px;
-        height: 60px;
+        font-size: 42px;
+        height: 70px;
+        padding: 10px;
     }
 
 
     .header-menu
     {
-        display: none ;
+        height: 33px;
     }
 
     
     .header-content ul li
     {
-        font-size: 12px;
-        padding: 2px;
+        font-size: 20px;
+        padding: 5px;
     }
 }
 
@@ -216,21 +236,22 @@
 @media(max-width:720px){
     .header-titulo
     {
-        font-size: 25px;
-        height: 60px;
+        font-size: 42px;
+        height: 70px;
+        padding: 10px;
     }
 
 
     .header-menu
     {
-        height: 20px;
+        height: 33px;
     }
 
     
     .header-content ul li
     {
-        font-size: 12px;
-        padding: 2px;
+        font-size: 20px;
+        padding: 5px;
     }
 }
 
@@ -249,21 +270,22 @@
 
     .header-titulo
     {
-        font-size: 25px;
+        font-size: 30px;
         height: 60px;
+        padding: 15px;
     }
 
 
     .header-menu
     {
-        height: 20px;
+        height: 25px;
     }
 
     
     .header-content ul li
     {
-        font-size: 12px;
-        padding: 2px;
+        font-size: 14px;
+        padding: 3px;
     }
 }
 
@@ -279,6 +301,7 @@
     .header-titulo
     {
         font-size: 25px;
+        padding: 20px;
     }
 
 
