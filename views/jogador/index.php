@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    $listaJogadores = $_SESSION['listaatualizada'];
+    $listaJogadores = $_SESSION['listaJogadores'];
    
 ?>
 <!DOCTYPE html>
@@ -25,7 +25,7 @@
                     <nav>
                         <ul>
                             <li><a href="../../index.php">Home</a> <span> | </span></li>
-                            <li><a href="add.php">cadastrar</a><span> | </span></li>
+                            <li><a href="../../controllers/JogadorController.php?metodo=cadastro">cadastrar</a><span> | </span></li>
                             <li><a href="index.php">listar</a></li>
                         </ul>
                     </nav> 
@@ -55,11 +55,11 @@
                                 <td><?= $jogador->jogador_cpf?></td>
                                 <td><?= $jogador->time_nome?></td>
                                 <td>
-                                <a href="<?php echo"../../controllers/JogadorController.php?editar=".$jogador->jogador_id?>"class="btn-editar"">Editar</a>
+                                <a href="<?php echo"../../controllers/JogadorController.php?editar=".$jogador->jogador_id?>"class="btn-editar">Editar</a>
                                 </td>
                     
                                 <td>
-                                    <a href="<?php echo"../../controllers/JogadorController.php?excluir=".$jogador->jogador_id?>" class="btn-excluir"">Excluir</a>
+                                    <a href="<?php echo"../../controllers/JogadorController.php?excluir=".$jogador->jogador_id?>" class="btn-excluir">Excluir</a>
                                 </td>
                             </tr>
                         <?php }?>

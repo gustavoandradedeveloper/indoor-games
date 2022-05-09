@@ -2,7 +2,7 @@
 <?php
   
     session_start();
-    $jogador = $_SESSION['jogadorSelecionado'];
+    $jogador = $_SESSION['listaJogadores'];
     $listaTimes = $_SESSION['listaTimes'];
 ?>
 <!DOCTYPE html>

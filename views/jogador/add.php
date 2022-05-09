@@ -1,6 +1,5 @@
 <?php
     session_start();
-    $jogador = $_SESSION['jogadorSelecionado'];
     $listaTimes = $_SESSION['listaTimes'];
 ?>
 

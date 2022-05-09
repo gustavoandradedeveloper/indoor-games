@@ -48,7 +48,7 @@
         }
         
         public function listarJogadorTime(){
-            $sql='
+            $sql="
                 select 
                     * 
                 from 
@@ -60,7 +60,7 @@
                 order by
                 jogador_id asc
                 
-            ';
+            ";
             $stmt = $this->conexao->prepare($sql);
             $stmt->execute();
             $listaJogadores = $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -69,7 +69,21 @@
         
         
 
-
+        public function listarPorJogador($n){
+            $sql="
+                select 
+                    * 
+                from 
+                    jogadores
+                where
+                    jogador_id = $n                
+            ";
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->execute();
+            $listaJogadores = $stmt->fetch(PDO::FETCH_OBJ);
+            return $listaJogadores;
+        }
+        
         public function editarJogador($jogador_id){
             $sql='
                 select 
@@ -112,7 +126,7 @@
             $stmt->bindValue(4, $objJogador->__get('jogador_id'));    
 
             $stmt->execute();
-            return $this->listarJogadorTime();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
 
             
             
@@ -131,7 +145,7 @@
             ";
             $stmt = $this->conexao->prepare($sql);
             $retorno = $stmt->execute();
-            return $this->listarJogadorTime();
+             return $this->listarJogadorTime();
 
 
         }
