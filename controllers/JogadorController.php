@@ -53,8 +53,11 @@
         $objConexao = new Conexao();
         $objJogadorService = new JogadorService($objConexao,$objJogador);
         $objJogadorService->inserirJogador();
-        print_r($objJogadorService);
-        header('location: ../index.php?inserido=1');
+
+        $listaatualizada =$objJogadorService->atualizarJogador($objJogador);
+
+        $_SESSION['listaatualizada'] = $listaatualizada;
+        header("location: ../views/jogador/index.php");
         
       }
 
@@ -62,11 +65,19 @@
 
       function listarJogador(){
         $objJogador = new Jogadores();
+        $objTime = new times();
         $objConexao = new Conexao();
         $objJogadorService = new JogadorService($objConexao,$objJogador);
-        $objListaJogadores = $objJogadorService->listarJogador();
-        $_SESSION['listaJogadores'] = $objListaJogadores;
-        header('location: ../views/jogador/index.php?inserido='.$_GET['inserido']);
+        $objTimeService = new TimeService($objConexao,$objTime);
+        $listaTimes = $objTimeService->listarTime();
+        
+        $objListaJogadores = $objJogadorService->listarJogadorTime();
+        $_SESSION['listaTimes'] = $listaTimes;
+        
+          $_SESSION['listaJogadores'] = $objListaJogadores;
+          /* print_r($_SESSION['listaJogadores']);
+          exit(); */
+        header('location: ../views/jogador/index.php');
       }
 
 
@@ -80,6 +91,9 @@
         $objTime = new times();
         $objConexao = new Conexao();
         $objTimeService = new TimeService($objConexao,$objTime);
+
+
+
         $listaTimes = $objTimeService->listarTime();
 
         $jogador_id = $_GET['editar'];
@@ -89,6 +103,13 @@
         $_SESSION['listaTimes'] = $listaTimes;
         header('location:../views/jogador/edit.php');
       }
+
+
+
+
+
+
+
 
 
       public function atualizarJogador(){

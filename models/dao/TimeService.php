@@ -15,15 +15,15 @@
         public function inserirTime(){
             try{
                 $sql = 'insert into times (
-                    time_nome,
+                    time_nome
                 ) values (
-                    :nome, 
+                    :nome
                 )';
 
                 $stmt = $this->conexao->prepare($sql);
                 $stmt->bindValue(':nome',$this->time->__get('time_nome'));
                 $retorno = $stmt->execute();
-                echo $retorno;
+                
             }catch(PDOException $e){
 
             }
@@ -41,7 +41,31 @@
             return $listatimes;
         }
 
-        
+    
+        public function atualizarTime($time){
+            
+            $objTime = $time;
+
+            $sql="
+                update 
+                    times
+                set
+                    time_nome  = ?
+                where
+                    time_id = ?
+            ";
+           
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->bindValue(1, $objTime->__get('time_nome')); 
+            $stmt->bindValue(2, $objTime->__get('time_id'));    
+
+            $stmt->execute();
+            return $this->listarTime();
+
+            
+            
+        }
+  
 
         public function editarTime($time_id){
             $sql='
@@ -60,9 +84,23 @@
         }
 
         
-        public function deletarTime(){
+        public function deletarTime($n){
+            
+            $s = $n;
+            $sql="
+                delete from 
+                    times
+                where
+                    time_id = $s 
+            ";
+            $stmt = $this->conexao->prepare($sql);
+            $retorno = $stmt->execute();
+            return $this->listarTime();
+
 
         }
+
+        
 
     }
 

@@ -20,16 +20,37 @@
                 <div class="header-menu">
                     <nav>
                         <ul>
-                            <li><a href="#">Home</a> <span> | </span></li>
-                            <li><a href="#">times</a><span> | </span></li>
-                            <li><a href="#">jogadores</a></li>
+                            <li><a href="index.php">Home</a> <span> | </span></li>
+                            <li><a href="views/time/index.php">times</a><span> | </span></li>
+                            <li><a href="controllers/JogadorController.php?metodo=listar">jogadores</a></li>
                         </ul>
                     </nav> 
                 </div>
             </div>
        </header>
        <main>
+            <div class="main-content">
+                
 
+                <div class="textos">
+                <h2>Projeto</h2>    
+                <ul type="none">
+                        <h5>Pré-requisitos:</h5>
+                        <li>Tecnologias requeridas: PHP, MySQL, CSS, HTML.</li>
+                        <li>Ter orientação a objetos, mesmo simples (classes e objetos).</li>
+                        <li>Todas as telas devem ser responsivas.</li>
+                        <li>Não será permitido o uso de Bootstrap ou frameworks front-end.</li>
+                        <li>Deverá ser adotado o modelo MVC (nas pastas).</li>
+                        <li>As 4 tecnologias requeridas devem ser usadas.</li>
+                        <li>Projeto em si:</li>
+                        <li>Criar um CRUD referente a qualquer tema desejado (times de futebol, filmes, séries, escolas, faculdades, tecnologias, enfim, qualquer tema).</li>
+                        <li>Conforme um CRUD funciona, deverá dispor das 4 funcionalidades básicas: listar, criar um novo, editar um existente e excluir um objeto.</li>
+                        <li>O tema principal deve ter um segundo tema para haver relacionamento entre as entidades, exemplo: o jogador Neymar joga no time PSG, então eu preciso ter o time PSG em uma segunda tabela no banco de dados para fazer o relacionamento com o jogador Neymar através da chave estrangeira.</li>
+                        <li>O segundo tema pode ter apenas uma telinha para o cadastro, não precisa ser um CRUD. Mas o tema principal precisa ser um CRUD.</li>
+                        <li><span>Data final para entrega: 06/05/2022</span></li>
+                    </ul>
+                </div>
+            </div>
        </main>
        <footer>
 

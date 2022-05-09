@@ -53,7 +53,7 @@
                     * 
                 from 
                     jogadores
-                 right join
+                 inner join
                     times
                 on
                     (jogadores.jogador_time_id = times.time_id )

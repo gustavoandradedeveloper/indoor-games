@@ -1,8 +1,12 @@
 <?php 
     session_start();
-    $listaJogadores = $_SESSION['listaatualizada'];
-   
+    $listaTime = $_SESSION['listaatualizadatime'];
+    
+
+    
 ?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -41,25 +45,21 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nome</th>
-                                <th>CPF</th>
-                                <th>Time</th>
                                 <th colspan="2">Alterar</th>
                             </tr>
                         </thead>
-
+                        
                         <tbody>
-                        <?php foreach($listaJogadores as $jogador){?>
+                        <?php foreach($listaTime as $time){?>
                             <tr>
-                                <td><?= $jogador->jogador_id?></td>
-                                <td><?= $jogador->jogador_nome?></td>
-                                <td><?= $jogador->jogador_cpf?></td>
-                                <td><?= $jogador->time_nome?></td>
+                                <td><?= $time->time_id?></td>
+                                <td><?= $time->time_nome?></td>
                                 <td>
-                                <a href="<?php echo"../../controllers/JogadorController.php?editar=".$jogador->jogador_id?>"class="btn-editar"">Editar</a>
+                                <a href="<?php echo"../../controllers/TimeController.php?editar=".$time->time_id?>"class="btn-editar"">Editar</a>
                                 </td>
                     
                                 <td>
-                                    <a href="<?php echo"../../controllers/JogadorController.php?excluir=".$jogador->jogador_id?>" class="btn-excluir"">Excluir</a>
+                                    <a href="<?php echo"../../controllers/TimeController.php?excluir=".$time->time_id?>" class="btn-excluir"">Excluir</a>
                                 </td>
                             </tr>
                         <?php }?>
