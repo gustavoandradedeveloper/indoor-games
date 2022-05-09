@@ -1,9 +1,6 @@
 <?php 
     session_start();
-    $listaTime = $_SESSION['listaatualizadatime'];
-    
-
-    
+    $listaTime = $_SESSION['listaAtualizadaDeTimes'];    
 ?>
 
 
@@ -55,11 +52,11 @@
                                 <td><?= $time->time_id?></td>
                                 <td><?= $time->time_nome?></td>
                                 <td>
-                                <a href="<?php echo"../../controllers/TimeController.php?editar=".$time->time_id?>"class="btn-editar"">Editar</a>
+                                <a href="<?php echo"../../controllers/TimeController.php?editar=".$time->time_id?>"class="btn-editar">Editar</a>
                                 </td>
                     
                                 <td>
-                                    <a href="<?php echo"../../controllers/TimeController.php?excluir=".$time->time_id?>" class="btn-excluir"">Excluir</a>
+                                    <a href="<?php echo"../../controllers/TimeController.php?excluir=".$time->time_id?>" class="btn-excluir">Excluir</a>
                                 </td>
                             </tr>
                         <?php }?>

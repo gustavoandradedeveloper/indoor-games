@@ -8,7 +8,7 @@
     require "../models/dao/TimeService.php"; 
     
     
-    class JogadorController{
+    class TimeController{
     
       private $metodo;
   
@@ -54,7 +54,7 @@
         
         $listaatualizada =$objTimeService->listarTime($objTimes);
 
-        $_SESSION['listaatualizadatime'] = $listaatualizada;
+        $_SESSION['listaAtualizadaDeTimes'] = $listaatualizada;
         header("location: ../views/time/index.php");
         
       }
@@ -75,7 +75,7 @@
     
         $listaatualizada =$objTimeService->atualizarTime($objTime);
         
-        $_SESSION['listaatualizadatime'] = $listaatualizada;
+        $_SESSION['listaAtualizadaDeTimes'] = $listaatualizada;
         header('location: ../views/time/index.php');
         
 
@@ -83,19 +83,12 @@
 
 
       function listarTime(){
-        $objJogador = new Jogadores();
         $objTime = new times();
         $objConexao = new Conexao();
-        $objJogadorService = new JogadorService($objConexao,$objJogador);
         $objTimeService = new TimeService($objConexao,$objTime);
         $listaTimes = $objTimeService->listarTime();
-        
-        $objListaJogadores = $objJogadorService->listarJogadorTime();
-        $_SESSION['listaTimes'] = $listaTimes;
-        
-        $_SESSION['listaJogadores'] = $objListaJogadores;
-        /* print_r($_SESSION['listaJogadores']);
-        exit(); */
+      
+        $_SESSION['listaAtualizadaDeTimes'] = $listaTimes;
         header('location: ../views/time/index.php');
       }
 
@@ -135,7 +128,7 @@
           $objTime = new Times(); 
           $objTimeService = new TimeService($objConexao,$objTime);
           $retorno = $objTimeService->deletarTime($n);
-          $_SESSION['listaatualizadatime'] = $retorno;
+          $_SESSION['listaAtualizadaDeTimes'] = $retorno;
           header('location: ../views/time/index.php');
 
       }
@@ -157,7 +150,7 @@
       $metodo = 'excluir';
     }
 
-  $objJogadorController = new JogadorController($metodo);
+  $objJogadorController = new TimeController($metodo);
   //$objJogadorController->editarJogador();
 
 

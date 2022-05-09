@@ -205,15 +205,15 @@ p{
 .tabela{
     margin: 0 auto;
     width: 900px;
- /* overflow: scroll;  */
+    
+
 }
 table{
     width: 100%;
+    text-transform: uppercase;
     
 }
-tr{
-    
-}
+
 
 th{
     background-color: rgb(1, 163, 114);

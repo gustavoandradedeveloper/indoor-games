@@ -21,7 +21,7 @@
                     <nav>
                         <ul>
                             <li><a href="index.php">Home</a> <span> | </span></li>
-                            <li><a href="views/time/index.php">times</a><span> | </span></li>
+                            <li><a href="controllers/TimeController.php?metodo=listar">times</a><span> | </span></li>
                             <li><a href="controllers/JogadorController.php?metodo=listar">jogadores</a></li>
                         </ul>
                     </nav> 

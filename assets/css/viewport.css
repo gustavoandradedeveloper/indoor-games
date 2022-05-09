@@ -97,9 +97,12 @@
 
 
 
+@media (max-width:650px){
+    .tabela{
+        overflow: scroll;
+    }
 
-
-
+}
 
 
 /* 1024/16 = 64em */
