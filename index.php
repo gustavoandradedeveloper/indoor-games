@@ -56,7 +56,7 @@
 
        </footer>
     </body>
-</html> -->
+</html> 
 
 
 
@@ -65,10 +65,7 @@
 
 
 
-
-
-
-
+ -->
 
 
 
@@ -85,15 +82,37 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="d1">
-        <div class="d2">
-            <div class="d3">
+    <div class="menu">
 
+    </div>
+    <main>
+        <div class="main-content">
+            <div class="barra-lateral">
+
+                <ul>
+                    <li class="home"><a type="button" href="">home</a></li>
+                    <li><a type="button" href="controllers/TimeController.php?metodo=listar">times</a></li>
+                    <li><a type="button" href="">Jogadores</a></li>
+                </ul>
             </div>
-            <div class="d4">
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, doloribus numquam! Voluptatibus, molestiae. Dolores exercitationem asperiores accusantium, hic odio quisquam reprehenderit iure delectus quas quo doloremque tempore nobis maiores sed.</p>  
+            <div class="content">
+            <ul type="none">
+                        <h5>Pré-requisitos:</h5>
+                        <li>Tecnologias requeridas: PHP, MySQL, CSS, HTML.</li>
+                        <li>Ter orientação a objetos, mesmo simples (classes e objetos).</li>
+                        <li>Todas as telas devem ser responsivas.</li>
+                        <li>Não será permitido o uso de Bootstrap ou frameworks front-end.</li>
+                        <li>Deverá ser adotado o modelo MVC (nas pastas).</li>
+                        <li>As 4 tecnologias requeridas devem ser usadas.</li>
+                        <li>Projeto em si:</li>
+                        <li>Criar um CRUD referente a qualquer tema desejado (times de futebol, filmes, séries, escolas, faculdades, tecnologias, enfim, qualquer tema).</li>
+                        <li>Conforme um CRUD funciona, deverá dispor das 4 funcionalidades básicas: listar, criar um novo, editar um existente e excluir um objeto.</li>
+                        <li>O tema principal deve ter um segundo tema para haver relacionamento entre as entidades, exemplo: o jogador Neymar joga no time PSG, então eu preciso ter o time PSG em uma segunda tabela no banco de dados para fazer o relacionamento com o jogador Neymar através da chave estrangeira.</li>
+                        <li>O segundo tema pode ter apenas uma telinha para o cadastro, não precisa ser um CRUD. Mas o tema principal precisa ser um CRUD.</li>
+                        <li><span>Data final para entrega: 06/05/2022</span></li>
+                </ul>
             </div>
         </div>
-    </div>
+    </main>
 </body>
-</html>
+</html> 
