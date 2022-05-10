@@ -91,10 +91,10 @@
                 delete from 
                     times
                 where
-                    time_id = $s 
+                    time_id = $s
             ";
             $stmt = $this->conexao->prepare($sql);
-            $retorno = $stmt->execute();
+            $retorno = $stmt->execute(); 
             return $this->listarTime();
 
 

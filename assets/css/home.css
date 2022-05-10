@@ -1,76 +1,339 @@
-
-.menu{
-    background-color: #35CD95;
+body{
+    background-color: #fff;
+}
+.main-header{
     width: 100%;
-    height: 70px;
+    height: 75px;
+    background-color: #353530;
+}
+.sub-main-header{
+    width: 100%;
+    height: 5px;
+    background-color: #1ad462;
+}
+.main-nav{
+     /*  border: 2px solid rgb(12, 111, 224); */
+    width: 100%;
+    height: 100%;
+}
+.main-nav-content{
+    /* border: 2px solid red;  */
+    width: 72%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.main-nav-logo{
+    /* border: 2px solid red;  */
+    width: 30%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 25px;
+    word-wrap: break-word;
+    font-size: 0.6em;
+    color: #fff;
+    font-weight: 900;
+    @font-face {
+        src: url('Poppins-Black.ttf')
+        format('truetype');
+        font-weight: 900;
+    }
+    
+}
+
+.main-nav-logo h1 a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 900;
+    @font-face {
+        src: url('Poppins-Black.ttf')
+        format('truetype');
+        font-weight: 900;
+    }
+    
+}
+
+.main-nav-menu{
+   /*  border: 2px solid rgb(156, 238, 5); */
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;  
+    text-transform: uppercase;
+    
+    
+ 
+}
+
+.main-nav-menu ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none; 
+    float: right;
+    color: #fff;
+  
+}
+
+.main-nav-menu ul li{
+    margin-top: 30px;
+    padding-right: 40px;
+}
+.main-nav-menu ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    letter-spacing: 0.03em;
+    @font-face {
+        src: url('OpenSans-VariableFont_wdth,wght.ttf')
+        format('truetype');
+        font-weight: bold;
+    } 
+}
+
+.main-nav-menu ul li a:hover{
+    color: #fff;
+    font-weight: 900;
+    background-color:#35CD96;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+
+.main{
+  /*   border: 3px solid royalblue; */
+    width: 100%;
+    height: 100%;
+    
 }
 
 .main-content{
-    width: 100%;
-    height: 585px;
-    display: flex;
-}
-
-.barra-lateral{
-    width: 16.7%;
+   /*  border: 3px solid rgb(166, 2, 199); */
+    width: 72%;
     height: 100%;
-    background-color: #2A2F38;
-    display: flex;
-    flex-direction: column;
-    border-radius: 0px 70px 0px 0px ;
-}
-.barra-lateral li{
-    width: 90%;
-    word-wrap:  break-word;
-    margin-top: 10%;
-    margin-left: 5%;
-    margin-bottom: 10%;
-    padding: 5%;
-    border-radius: 10px;
-    text-align: center;
-    background-color: #35CD95;
-    
+    margin: 0 auto;
 }
 
-.barra-lateral ul{
-    margin-top: 80%;
-    text-align: center;
-    font-weight: 800;
-
-}
-
-.barra-lateral ul li a{
-
-    text-transform: uppercase;
-    text-decoration: none;
-    color:#fff;
-    
-    
-
-}
-
-
-.barra-lateral ul li:hover{
-
-    text-transform: uppercase;
-    text-decoration: none;
-    background-color: #136C6D;
-    
-    
-
-}
 
 .content{
-    width: 83.3%;
-    height: 550px;
-    /* border: 2px solid red; */
-    text-align: center;
-    font-size: 20px;
-    line-height: 150%;
-    word-wrap: break-word;
+    /* border: 1px solid rgb(2, 199, 35); */
+    width: 100%;
+    height: 500PX; 
+     /*lembra de colocar de voltar pra os 100%  */
+
 }
 
-.content h5{
-    padding-top: 3%;
-    font-size: 140%;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* INICIO FORMULARIO DE CADASTRO */
+
+.container-form{
+    border: 1px solid rgb(2, 199, 35);
+    width: 100%;
+    height: 500PX; 
+}
+
+
+.titulo-cadastro{
+    margin-top: 5%;
+   /*  border: 1px solid rgb(34, 4, 116); */
+    width: 100%;
+    height: 50PX;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+.form-background{
+    /* border: 1px solid rgb(34, 4, 116); */
+    margin-top: 3px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 50px;
+    background-color: #2C3E50;
+    border-radius: 10px 10px 0  0;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 15px;
+    
+    
+}
+
+.form-background p{
+    color:#fff;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.form-content{
+    /* border: 1px solid rgb(189, 13, 180);  */
+    width: 100%;
+    height: 200PX;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.form-content label{
+    width: 900px;
+    height: 30px;
+   /*  background-color: #c41e63; */
+}
+.form-content input{
+    /* background-color: #2C3E50;  */ 
+    width: 100%;
+    height: 40px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.conteudo{
+  /*   border: 2px solid rgb(116, 4, 65); */
+    width: 100%;
+    height: 100%; 
+    display: flex;
+
+     /*lembra de colocar de voltar pra os 100%  */
+
+}
+
+.texto{
+    /* border: 2px solid rgb(16, 12, 211); */
+    margin: 4% auto;
+    width: 80%;
+    height: 95%; 
+    word-break: break-all;
+}
+
+.texto-titulo {
+    text-align: center;
+    font-size: 2.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    
+}
+
+.texto p{
+    text-align: center;
+    line-height: 1.4;
+    font-size: 1.7em;
+    text-align: center;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Inicio dos botões da home de times e jogadores
+*/
+.content-itens{
+    /* border: 5px solid rgb(0, 70, 128); */
+    width: 90%;
+    height: 100%;
+    margin: 160px auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itens1{
+   /*  border: 5px solid red; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    
+}
+
+.itens2{
+    /* border: 5px solid red; */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.itens{
+    /* border: 5px solid red; */
+    margin:0 auto;
+    width: 300px;
+    height: 200px;
+    background: #1ad462;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 90px;
+    
+}
+
+.itens a{
+    word-break: break-all;
+    text-decoration: none;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 1.6em;
+    width: 100%;
+}
+
+.itens a:hover{
+    word-break: break-all;
+    text-decoration: none;
+    color: rgb(3, 56, 38);
+    font-weight: bold;
+    font-size: 1.6em;
+    border-radius: 30px;
+    padding: 30px;
+   
 }

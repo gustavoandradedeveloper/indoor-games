@@ -129,6 +129,7 @@
           $objTimeService = new TimeService($objConexao,$objTime);
           $retorno = $objTimeService->deletarTime($n);
           $_SESSION['listaAtualizadaDeTimes'] = $retorno;
+       
           header('location: ../views/time/index.php');
 
       }

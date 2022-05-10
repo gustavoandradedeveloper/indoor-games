@@ -1,4 +1,4 @@
-<?php 
+ <?php 
     session_start();
     $listaJogadores = $_SESSION['listaJogadores'];
    
@@ -69,4 +69,99 @@
             </div>
         </main>
     </body>
-</html>
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/home.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/viewport1.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/reset.css">
+
+    
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="main-header">
+            <div class="main-nav">
+                <div class="main-nav-content">
+                    <div class="main-nav-logo">
+                        <h1><a href="#">INDOOR-GAMES </a></h1>
+                    </div>
+                    <div class="main-nav-menu">
+                        <ul>
+                            <li><a href="../../index.php">Home</a></li>
+                            <li><a href="../jogador/index.php">Jogadores</a></li>
+                            <li><a href="../../controllers/logoff.php">Sair</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-main-header">   
+        </div>
+
+    </header>
+    <main>
+        <div class="main">
+            <div class="main-content">
+                <div class="content">
+                    <div class="content-itens">
+
+
+                        <div class="itens1">
+                            <div class="itens">
+                                <a href="add.php">CADASTRAR</a>
+                            </div>
+
+                            <div class="itens">
+                                <a href="">LISTAR</a>
+                            </div>
+                        </div>
+
+
+
+                        <div class="itens2">
+                            <div class="itens">
+                                <a href="">EDITAR</a>
+                            </div>
+    
+                            <div class="itens">
+                                <a href="">EXCLUIR</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>  -->

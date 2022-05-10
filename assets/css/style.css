@@ -12,12 +12,6 @@ p{
 }
 
 
-
-
-
-
-
-
 /*  Inicio da div que contem o titulo  */
 .header-content{
     width: 100%;
@@ -31,7 +25,7 @@ p{
     width: 100%;
     padding: 20px;
     height: 70px;
-    background-color:#dfcb1e;
+    background-color:#353530;
     text-align: center;
     word-break:break-word ;
     font-size: 30px;

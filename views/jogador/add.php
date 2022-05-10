@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $listaTimes = $_SESSION['listaTimes'];
+    $listaTimes = $_SESSION['listaAtualizadaDeTimes'];
 ?>
 
 
