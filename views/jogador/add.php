@@ -54,8 +54,8 @@
                       
                         <?php }?>
                         </select><br><br>
-                        <input type="submit" value="cadastrar" class="btn cad">
-                        <input type="reset" value="limpar" class="btn limpar">
+                        <input type="submit" value="cadastrar" class="btn-cadastrar">
+                        <input type="reset" value="limpar" class="btn-limpar">
                   </form>
               </div>
           </div>

@@ -31,14 +31,10 @@ p{
     font-size: 30px;
     font-weight: 1000;   
     letter-spacing: 2px;
+    color: white;
+    
 }
 /*  Fim da div que contem o titulo  */
-
-
-
-
-
-
 
 
 /*Inicio da div ou container do menu */
@@ -46,9 +42,10 @@ p{
 {
     width: 100%;
     height: 30px;
-    background-color: #161925;
+    background-color: #1AD462;
     word-break: break-word;
     color: #fefefe;
+    border-radius: 0 0 30px 30px;
 }
 
 
@@ -69,7 +66,7 @@ p{
     font-size: 15px;
     font-weight:700 ;
     letter-spacing: 2px;
-    color: #464749;
+    color: #fefefebe;
     text-transform: uppercase;
 }
 
@@ -84,15 +81,6 @@ p{
 {
     padding-left: 10px ;
 }
-/* fim da lista de menu  */
-
-
-
-
-
-
-
-
 
 .header-content ul li a:link
 {
@@ -108,10 +96,32 @@ p{
 
 .header-content ul li a:hover
 {
-        color:rgb(224, 203, 12);
+        color:#353530;
 }
 /*Fim do conteudo que está dentro da div do menu */
 /*Fim da div ou container do menu */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -162,40 +172,14 @@ p{
 
 /* tabela */
 .conteudo{
-    width: 1000px;
     margin: 15px auto;
-    text-align: center;  
-}
-
-
-/* .tabela{
-    width: 500px;
-    border: 2px solid rgb(22, 177, 100);
-    margin: 0 auto;
-   
-}
-.tabela tr{
-    width: 100%;
-    text-align: center;
-    border: 2px solid blue;
-    
-}
-.tabela th{
-    padding-left: 60px;
-    background-color: #3f0c83;
-    color: #EEE;
-    text-align: left;
-}
-.tabela td{
-    padding-left: 60px;
-    color: #EEE;
-    text-align: left;
-} */
-.conteudo{
+    text-align: center; 
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
 }
+
+
 .tabela{
     margin: 0 auto;
     width: 900px;
@@ -210,13 +194,14 @@ table{
 
 
 th{
-    background-color: rgb(1, 163, 114);
+    background-color: #1AD462;
     color:#fff;
     word-wrap: break-all;
     font-weight: bold;
+    
 }
 td{
-    border: 2px solid rgb(223, 223, 230);
+    border: 1px solid rgb(223, 223, 230);
     word-wrap: break-all;
     color:black;
     padding: 15px 15px;
@@ -237,7 +222,7 @@ td{
     width: 30px;
     padding: 10px 15px;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-weight: 500;
 }
 
@@ -262,49 +247,134 @@ td{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .form{
-    margin: 0 auto;
+    margin: 10px auto;
     width: 600px;
     height: 500px;
     text-align: left;
-    background-color: rgb(12, 57, 83);
-    border:5px solid rgb(12, 57, 83);
-    border-radius: 20px;
+    background-color: rgb(250, 250, 250);
+    border:5px solid #353530;
+    border-radius: 10px;
     padding: 20px;
     
    
  /* overflow: scroll;  */
 }
 label{
-    color: #fff;
+    color: rgb(3, 19, 11);
     margin-bottom: 15px;
+    font-weight: 700;
 }
 
 
 input, select,textarea{
     width:100%;
     margin-top: 5px;
-    background: #EEE;
-    border:0;
+    border:1px solid rgba(1, 48, 22, 0.856);
     font-size: 18px;
     font-weight: 900;
     margin-bottom: 15px;
     height: 40px;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px;
     text-transform: uppercase;
-    color:#000;
 }
 
 .form h1{
     text-align: center;
     text-transform: uppercase;
-    color:#fff;
+    color:#1DF38E;
     margin-bottom: 15px;
     
 }
 
 input:focus {
-    background-color: rgb(148, 243, 235);
-    color:#000;
+    background-color: rgba(198, 216, 206, 0.603);
 }
+
+
+.btn-cad{
+    margin-top: 200px;
+    background-image: linear-gradient(225deg, #adff81 0, #8fff82 16.67%, #68ff81 33.33%, #1ef37e 50%, #00e67d 66.67%, #00dd80 83.33%, #00d587 100%);
+    color: white;
+    border: 0 ;
+    
+}
+
+
+
+
+
+.btn-cad:hover{
+    margin-top: 200px;
+    background-image: linear-gradient(105deg, #9bea57 0, #87ed63 12.5%, #6fef71 25%, #52f17f 37.5%, #1df38e 50%, #00f59d 62.5%, #00f6ad 75%, #00f7bd 87.5%, #00f8ce 100%);
+    color: white;
+    border: 0 ;
+    cursor:pointer;
+    
+}
+
+.btn-limpar{
+    background-image: linear-gradient(305deg, #e2b233 0, #e7a72b 12.5%, #ec9b24 25%, #f08d1f 37.5%, #f37d1d 50%, #f56c1f 62.5%, #f75a25 75%, #f9462d 87.5%, #fa2d36 100%);
+    border:0;
+    color:#fff;
+}
+
+
+.btn-limpar:hover{
+    background-image: linear-gradient(110deg, #ffde00 0, #ffce00 10%, #ffbc00 20%, #ffa800 30%, #ff9312 40%, #f37d1d 50%, #e46824 60%, #d55529 70%, #c8442e 80%, #bd3633 90%, #b32937 100%);
+    border:0;
+    color:#fff;
+    cursor:pointer;
+}
+
+.btn-cadastrar:hover{
+   
+    background-image: linear-gradient(30deg, #fffa7b 0, #fffc79 6.25%, #edfe78 12.5%, #d8fe79 18.75%, #c1fd7b 25%, #a7fc7f 31.25%, #89fa84 37.5%, #63f78b 43.75%, #1df393 50%, #00ef9d 56.25%, #00eaa9 62.5%, #00e6b6 68.75%, #00e3c5 75%, #00dfd5 81.25%, #00dbe5 87.5%, #00d8f6 93.75%, #00d5ff 100%);
+    color: white;
+    border: 0 ;
+    cursor: pointer;
+}
+
+.btn-cadastrar{
+    background-image: linear-gradient(225deg, #adff81 0, #8fff82 16.67%, #68ff81 33.33%, #1ef37e 50%, #00e67d 66.67%, #00dd80 83.33%, #00d587 100%);
+    
+    border: 0 ;
+    cursor: pointer;
+}
+.btn-limpar:hover{
+   
+    background-image: linear-gradient(110deg, #ffde00 0, #ffce00 10%, #ffbc00 20%, #ffa800 30%, #ff9312 40%, #f37d1d 50%, #e46824 60%, #d55529 70%, #c8442e 80%, #bd3633 90%, #b32937 100%);
+    color: white;
+    border: 0 ;
+    cursor:pointer;
+}
+

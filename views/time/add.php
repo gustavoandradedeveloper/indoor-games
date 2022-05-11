@@ -37,14 +37,56 @@
                         <label for="">Nome:</label>
                         <input type="text" name="txtNome" placeholder="Insira o nome" required>
 
-                        <input type="submit" value="cadastrar" class="btn cad">
-                        <input type="reset" value="limpar" class="btn limpar">
+                        <input type="submit" value="cadastrar" class="btn-cadastrar">
+                        <input type="reset" value="limpar" class="btn-limpar">
                   </form>
               </div>
           </div>
       </main>
   </body>
 </html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!-- <!DOCTYPE html>
@@ -107,14 +149,6 @@
     </body>
 </html> 
 
-
-
-
-
-
-
-
- 
 
 <!-- 
 

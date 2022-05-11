@@ -57,7 +57,7 @@
                         <?php }?>
                         </select><br><br>
                         <input type="hidden" name="txtId" value="<?= $jogador->jogador_id?>">
-                        <input type="submit" value="ATUALIZAR" class="">
+                        <input type="submit" value="ATUALIZAR" class="btn-cadastrar">
                     </form>
                 </div>
             </div>
