@@ -1,7 +1,9 @@
- <?php 
+<?php 
     session_start();
-    $listaJogadores = $_SESSION['listaJogadores'];
-   
+    $listaTime = $_SESSION['listaAtualizadaDeTimes'];   
+    /* echo'<pre>';
+    print_r($listaTime);
+    echo'</pre>'; */
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,15 +27,13 @@
                     <nav>
                         <ul>
                             <li><a href="../../index.php">Home</a> <span> | </span></li>
-                            <li><a href="../../controllers/JogadorController.php?menu=cadastro">cadastrar</a><span> | </span></li>
-                            <li><a href="list.php">editar</a>|</li>
-                            <li><a href="del.php">excluir</a></li>
+                            <li><a href="add.php">cadastrar</a><span> | </span></li>
+                            <li><a href="../../controllers/TimeController.php?menu=listar">editar</a></li>
                         </ul>
                     </nav> 
                 </div>
             </div>
        </header>
-
        <main>
             <div class="conteudo"> 
                 <div class="tabela">
@@ -42,24 +42,27 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nome</th>
-                                <th>CPF</th>
-                                <th>Time</th>
+                                <th>Alterar</th>
                             </tr>
                         </thead>
-
                         <tbody>
-                        <?php foreach($listaJogadores as $jogador){?>
-                            <tr>
-                                <td><?= $jogador->jogador_id?></td>
-                                <td><?= $jogador->jogador_nome?></td>
-                                <td><?= $jogador->jogador_cpf?></td>
-                                <td><?= $jogador->time_nome?></td>
-                            </tr>
-                        <?php }?>
+                            <?php foreach($listaTime as $time){?>
+                                <tr>
+                                    <td>
+                                        <?= $time->time_id?>
+                                    </td>
+                                    <td>
+                                        <?= $time->time_nome?>
+                                    </td>
+                                    <td>
+                                        <a href="<?php echo"../../controllers/TimeController.php?menu=excluir&timeId=".$time->time_id?>" class="btn-excluir">Excluir</a>
+                                    </td>
+                                </tr>
+                            <?php }?>
                         </tbody>
                     </table>
                 </div>
             </div>
         </main>
     </body>
-</html> 
+</html>

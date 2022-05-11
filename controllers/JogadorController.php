@@ -10,77 +10,61 @@
     
     class JogadorController{
     
-      private $metodo;
+      private $menu;
   
-      public function __construct($metodo){
-        $this->metodo = $metodo;
-        $this->escolha($this->metodo);
+      public function __construct($menu){
+        $this->menu = $menu;
+        $this->menu($this->menu);
       }
     
 
-      function escolha($var){
+      function menu($menu){
         
-        switch($var){
+        switch($menu){
+
           case 'cadastro':
+
             $this->cadastro();
             break;
+
           case 'inserir':
-              $this->inserirJogador();
-            break;
-          
-          case 'listar':
-              $this->listarJogador();
+
+            $this->inserirJogador();
             break;
 
-          case 'editar':
-              $this->edicao();
+          
+          case 'listar':
+
+            $this->listarJogador();
+            break;
+
+          case 'buscarPorId':
+
+            $this->buscarPorId();
             break;
 
           case 'atualizar':
-              $this->editarJogador();
+
+            $this->editarJogador();
             break;
 
 
           case 'excluir':
+
             $this->deletarJogador();
-          break;
+            break;
         }
     
       }
 
+
+
+
+      
+      // esse metodo foi criado pois em cadastro precisar que seja carregado antes a lista de times para que seja exibido no campo select
       function cadastro(){
         header('location: ../views/jogador/add.php');
       }
-
-      function edicao(){
-        $n = $_GET['editar'];
-
-        $objJogador = new Jogadores();
-        $objTime = new times();
-        $objConexao = new Conexao();
-
-        $objJogadorService = new JogadorService($objConexao,$objJogador);
-        $objTimeService = new TimeService($objConexao,$objTime);
-        
-
-        $objListaJogadores = $objJogadorService->listarPorJogador($n);
-        $listaTimes = $objTimeService->listarTime();
-
-      /*   echo'<pre>';
-        print_r($objListaJogadores);
-        echo'</pre>';
-            exit(); */
-        
-        
-        $_SESSION['listaJogadores'] = $objListaJogadores;
-        $_SESSION['listaTimes'] = $listaTimes;
-       
-        
-        header('location: ../views/jogador/edit.php');
-      }
-
-      
-      
 
 
 
@@ -98,11 +82,10 @@
 
         $listaatualizada =$objJogadorService->atualizarJogador($objJogador);
 
-        header('location: ../controllers/JogadorController.php?metodo=listar');
-        
-        
+        header('location: ../controllers/JogadorController.php?menu=listar');         
       }
-  
+
+
 
 
       function listarJogador(){
@@ -118,67 +101,54 @@
         $_SESSION['listaTimes'] = $listaTimes;
         
         $_SESSION['listaJogadores'] = $objListaJogadores;
-          /* echo '<pre>';
-          print_r($_SESSION['listaJogadores']);
-          echo'</pre>';
-          exit(); */
+          
           header('location: ../views/jogador/index.php');
       }
-
-
-
-/* 
-      function editarJogador(){
-        $objJogador = new Jogadores();
-        $objConexao = new Conexao();
-        $objJogadorService = new JogadorService($objConexao,$objJogador);
-
-        $objTime = new times();
-        $objConexao = new Conexao();
-        $objTimeService = new TimeService($objConexao,$objTime);
-
-
-
-        $listaTimes = $objTimeService->listarTime();
-
-        $jogador_id = $_GET['editar'];
-        $jogador = $objJogadorService->editarJogador($jogador_id);
-       
-      
-      
-        $_SESSION['jogadorSelecionado'] = $jogador;
-        $_SESSION['listaTimes'] = $listaTimes;
-        header('location:../views/jogador/edit.php');
-      }
-
- */
-
-
 
 
 
 
 
       public function editarJogador(){
-          $objConexao = new Conexao();
-          $objJogador = new Jogadores();     
+        $objConexao = new Conexao();
+        $objJogador = new Jogadores();     
 
-          $objJogador->__set('jogador_nome',$_POST['txtNome']);
-          $objJogador->__set('jogador_cpf',$_POST['txtCpf']);
-          $objJogador->__set('jogador_time',$_POST['txtTimeId']);
-          $objJogador->__set('jogador_id',$_POST['txtId']);
+        $objJogador->__set('jogador_nome',$_POST['txtNome']);
+        $objJogador->__set('jogador_cpf',$_POST['txtCpf']);
+        $objJogador->__set('jogador_time',$_POST['txtTimeId']);
+        $objJogador->__set('jogador_id',$_POST['txtId']);
+        
+
+        $objJogadorService = new JogadorService($objConexao,$objJogador);
+       
+    
+        $listaatualizada =$objJogadorService->atualizarJogador($objJogador);
+
+
+        $_SESSION['listaJogadores'] = $listaatualizada;
+        header('location: ../controllers/JogadorController.php?menu=listar');
+    }
+
+
+
+
+      function buscarPorId(){
+        $jogador_id = $_GET['jogadorId'];
           
+        $objJogador = new Jogadores();
+        $objTime = new times();
+        $objConexao = new Conexao();
 
-          $objJogadorService = new JogadorService($objConexao,$objJogador);
-         
+        $objJogadorService = new JogadorService($objConexao,$objJogador);
+        $objTimeService = new TimeService($objConexao,$objTime);
       
-          $listaatualizada =$objJogadorService->atualizarJogador($objJogador);
+        $objListaJogadores = $objJogadorService->listarPorJogador($jogador_id);
+        $objListaTimes = $objTimeService->listarTime();
 
-
-          $_SESSION['listaJogadores'] = $listaatualizada;
-          header('location: ../controllers/JogadorController.php?metodo=listar');
-          
-
+        $_SESSION['listaJogadores'] = $objListaJogadores;
+        $_SESSION['listaTimes'] = $objListaTimes;
+       
+        header('location: ../views/jogador/edit.php');
       }
 
 
@@ -186,35 +156,19 @@
 
 
       function deletarJogador(){
-          $n = $_GET['excluir'];
+          $jogadorId = $_GET['jogadorId'];
           $objConexao = new Conexao();
           $objJogador = new Jogadores(); 
           $objJogadorService = new JogadorService($objConexao,$objJogador);
-          $retorno = $objJogadorService->deletarJogador($n);
+          $retorno = $objJogadorService->deletarJogador($jogadorId);
           $_SESSION['listaJogadores'] = $retorno;
-          header('location: ../views/jogador/index.php');
-
+          header('location: ../views/jogador/del.php');
       }
-
-
-    
   }
 
 
-    if(isset($_GET['metodo'])){
 
-      $metodo = $_GET['metodo'];
-
-    }else if(isset($_GET['editar'])){
-
-      $metodo = 'editar';
-      
-    }else if(isset($_GET['excluir'])){
-      $metodo = 'excluir';
-    }
-
-  $objJogadorController = new JogadorController($metodo);
-  //$objJogadorController->editarJogador();
-
+    isset($_GET['menu'])?$menuEscolhido = $_GET['menu']:$menuEscolhido = null;
+    $objJogadorController = new JogadorController($menuEscolhido);
 
 ?>

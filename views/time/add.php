@@ -33,7 +33,7 @@
           <div class="conteudo"> 
               <div class="form">
                   <h1>formulário</h1>
-                    <form action="../../controllers/TimeController.php?metodo=inserir" method="post">
+                    <form action="../../controllers/TimeController.php?menu=inserir" method="post">
                         <label for="">Nome:</label>
                         <input type="text" name="txtNome" placeholder="Insira o nome" required>
 

@@ -1,7 +1,6 @@
 <?php
 
     class conexao{
-
         private $host    ='localhost';
         private $dbname  ='indoor_games';
         private $usuario ='root';
@@ -18,13 +17,8 @@
                 return $objConexao;
             }catch(PDOException $e){
                 echo "Erro ".$e->getCode() ."Mensagem ". $e->getMessage();
-            }
-
-            
+            }      
         }
     }
-
-    
-
 
 ?>

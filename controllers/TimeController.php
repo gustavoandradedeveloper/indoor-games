@@ -1,4 +1,5 @@
 <?php
+
     session_start();
     require "../models/entidades/Jogadores.php";
     require "../models/dao/JogadorService.php"; 
@@ -9,88 +10,104 @@
     
     
     class TimeController{
-    
-      private $metodo;
-  
-      public function __construct($metodo){
-        $this->metodo = $metodo;
-        $this->escolha($this->metodo);
-      }
-    
+      private $menuEscolhido;
 
-      function escolha($var){
+      public function __construct($menuEscolhido){
+
+        $this->menuEscolhido = $menuEscolhido;
+
+        $this->menu($this->menuEscolhido);
+
+      }
+
+
+
+
+
+      function menu($menuEscolhido){
         
-        switch($var){
+        switch($menuEscolhido){
+
           case 'inserir':
-              $this->inserirTime();
+
+            $this->inserirTime();
             break;
           
           case 'listar':
-              $this->listarTime();
+
+            $this->listarTime();
             break;
 
           case 'editar':
-              $this->editarTime();
+
+            $this->editarTime();
             break;
 
           case 'atualizar':
-              $this->atualizarTime();
+
+            $this->atualizarTime();
             break;
+
           case 'excluir':
             $this->deletarTime();
-          break;
+            break;
         }
     
       }
 
-      
+
+
+
+
       function inserirTime(){
         $objTimes = new Times();
         $objTimes->__set('time_nome',$_POST['txtNome']);
 
         $objConexao = new Conexao();
         $objTimeService = new TimeService($objConexao,$objTimes);
+        
         $objTimeService->inserirTime($objTimes);
         
         $listaatualizada =$objTimeService->listarTime($objTimes);
 
         $_SESSION['listaAtualizadaDeTimes'] = $listaatualizada;
-        header("location: ../views/time/index.php");
-        
+        header("location: ../views/time/index.php");  
       }
 
-      public function atualizarTime(){
-        $objConexao = new Conexao();
-        $objTime = new Times();     
 
+
+
+
+      public function atualizarTime(){
+        $objTime = new Times();     
         $objTime->__set('time_nome',$_POST['txtNome']);
         $objTime->__set('time_id',$_POST['txtId']);
-        /*  echo'<pre>'; 
-          print_r($_POST['txtNome']);
-          echo'</pre>'; 
-          exit(); */
 
+        $objConexao = new Conexao();
         $objTimeService = new TimeService($objConexao,$objTime);
        
-    
         $listaatualizada =$objTimeService->atualizarTime($objTime);
         
         $_SESSION['listaAtualizadaDeTimes'] = $listaatualizada;
-        header('location: ../views/time/index.php');
         
+        header('location: ../views/time/index.php');
+      }
 
-    }
+
+
 
 
       function listarTime(){
         $objTime = new times();
         $objConexao = new Conexao();
         $objTimeService = new TimeService($objConexao,$objTime);
+
         $listaTimes = $objTimeService->listarTime();
-      
+  
         $_SESSION['listaAtualizadaDeTimes'] = $listaTimes;
         header('location: ../views/time/index.php');
       }
+
 
 
 
@@ -100,19 +117,9 @@
         $objConexao = new Conexao();
         $objTimeService = new TimeService($objConexao,$objTime);
 
-        $objTime = new Times();
-        $objConexao = new Conexao();
-        $objTimeService = new TimeService($objConexao,$objTime);
-
-
-
-        $listaTimes = $objTimeService->listarTime();
-
-        $time_id = $_GET['editar'];
+        $time_id = $_GET['timeId'];
         $time = $objTimeService->editarTime($time_id);
-      
         $_SESSION['timeSelecionado'] = $time;
-        $_SESSION['listaTimes'] = $listaTimes;
         header('location:../views/time/edit.php');
       }
 
@@ -123,36 +130,25 @@
 
 
       function deletarTime(){
-          $n = $_GET['excluir'];
+          $idTime = $_GET['timeId'];
           $objConexao = new Conexao();
           $objTime = new Times(); 
           $objTimeService = new TimeService($objConexao,$objTime);
-          $retorno = $objTimeService->deletarTime($n);
+          
+          $retorno = $objTimeService->deletarTime($idTime);
+          
           $_SESSION['listaAtualizadaDeTimes'] = $retorno;
        
           header('location: ../views/time/index.php');
 
       }
-
-
-    
-  }
-
-
-    if(isset($_GET['metodo'])){
-
-      $metodo = $_GET['metodo'];
-
-    }else if(isset($_GET['editar'])){
-
-      $metodo = 'editar';
-      
-    }else if(isset($_GET['excluir'])){
-      $metodo = 'excluir';
     }
 
-  $objJogadorController = new TimeController($metodo);
-  //$objJogadorController->editarJogador();
 
+
+
+
+  isset($_GET['menu'])?$menuEscolhido = $_GET['menu']:$menuEscolhido = null;
+  $objJogadorController = new TimeController($menuEscolhido);
 
 ?>

@@ -25,9 +25,9 @@
               <div class="header-menu">
                   <nav>
                       <ul>
-                          <li><a href="../../index.php">Home</a> <span> | </span></li>
-                          <li><a href="add.php">cadastrar</a><span> | </span></li>
-                          <li><a href="index.php">listar</a></li>
+                          <li><a href="index.php">listar</a> <span> | </span></li>
+                          <li><a href="add.php">Editar</a><span> | </span></li>
+                          <li><a href="del.php">excluir</a></li>
                       </ul>
                   </nav> 
               </div>
@@ -38,7 +38,7 @@
           <div class="conteudo"> 
               <div class="form">
                   <h1>formulário</h1>
-                    <form action="../../controllers/JogadorController.php?metodo=inserir" method="post">
+                    <form action="../../controllers/JogadorController.php?menu=inserir" method="post">
                         <label for="">Nome:</label>
                         <input type="text" name="txtNome" placeholder="Insira o nome" required>
 

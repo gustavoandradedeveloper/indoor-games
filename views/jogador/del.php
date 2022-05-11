@@ -1,8 +1,7 @@
-<?php
-  
+<?php 
     session_start();
-    $jogador = $_SESSION['jogadorSelecionado'];
-    $listaTimes = $_SESSION['listaTimes'];
+    $listaJogadores = $_SESSION['listaJogadores'];
+   
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,9 +24,9 @@
                 <div class="header-menu">
                     <nav>
                         <ul>
-                            <li><a href="../../index.php">Home</a> <span> | </span></li>
-                            <li><a href="add.php">cadastrar</a><span> | </span></li>
-                            <li><a href="index.php">listar</a></li>
+                            <li><a href="index.php">Listar</a> <span> | </span></li>
+                            <li><a href="../../controllers/JogadorController.php?menu=cadastro">cadastrar</a><span> | </span></li>
+                            <li><a href="list.php">editar</a></li>
                         </ul>
                     </nav> 
                 </div>
@@ -36,30 +35,35 @@
 
        <main>
             <div class="conteudo"> 
-                <div class="form">
-                    <h1>formulário</h1>
-                    <form action="../../controllers/JogadorController.php?metodo=editar" method="post">
-                        <label for="">Nome:</label>
-                        <input type="text" name="txtNome" value="<?= $jogador->jogador_nome?>">
+                <div class="tabela">
+                    <table cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nome</th>
+                                <th>CPF</th>
+                                <th>Time</th>
+                                <th>Alterar</th>
+                            </tr>
+                        </thead>
 
-                        <label for="">CPF:</label>
-                        <input type="text" name="txtCpf" value="<?= $jogador->jogador_cpf?>">
-
-                        <label for="">Escolhar o time:</label>
-                        <select name="txtTimeId">
-                        <?php foreach($listaTimes as $time ){?>
-
-                            <option value="<?= $time->time_id?>">
-                                <?= $time->time_nome?>
-                            </option>
-                        
+                        <tbody>
+                        <?php foreach($listaJogadores as $jogador){?>
+                            <tr>
+                                <td><?= $jogador->jogador_id?></td>
+                                <td><?= $jogador->jogador_nome?></td>
+                                <td><?= $jogador->jogador_cpf?></td>
+                                <td><?= $jogador->time_nome?></td>
+                                <td>
+                                    <a href="<?php echo"../../controllers/JogadorController.php?menu=excluir&jogadorId=".$jogador->jogador_id?>"class="btn-editar">Excluir</a>
+                                </td>
+                            </tr>
                         <?php }?>
-                        </select><br><br>
-                        <input type="hidden" name="txtId" value="<?= $jogador->jogador_id?>">
-                        <input type="submit" value="ATUALIZAR" class="">
-                    </form>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </main>
     </body>
-</html>
+</html> 
+

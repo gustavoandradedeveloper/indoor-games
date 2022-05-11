@@ -26,7 +26,7 @@
                 <div class="header-menu">
                     <nav>
                         <ul>
-                            <li><a href="../../index.php">Home</a> <span> | </span></li>
+                            <li><a href="index.php">Home</a> <span> | </span></li>
                             <li><a href="add.php">cadastrar</a><span> | </span></li>
                             <li><a href="index.php">listar</a></li>
                         </ul>
@@ -39,7 +39,7 @@
             <div class="conteudo"> 
                 <div class="form">
                     <h1>formulário</h1>
-                    <form action="../../controllers/JogadorController.php?metodo=atualizar" method="post">
+                    <form action="../../controllers/JogadorController.php?menu=atualizar" method="post">
                         <label for="">Nome:</label>
                         <input type="text" name="txtNome" value="<?= $jogador->jogador_nome?>">
 

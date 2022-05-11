@@ -1,7 +1,7 @@
 <?php
     session_start();
     $time = $_SESSION['timeSelecionado'];
-    $listaTimes = $_SESSION['listaTimes'];
+
 ?>
 
 
@@ -39,12 +39,12 @@
           <div class="conteudo"> 
               <div class="form">
                   <h1>formulário</h1>
-                    <form action="../../controllers/TimeController.php?metodo=atualizar" method="post">
+                    <form action="../../controllers/TimeController.php?menu=atualizar" method="post">
                         <label for="">Nome:</label>
                         <input type="text" name="txtNome" placeholder="Insira o nome" required value="<?= $time->time_nome?>">
                         
                         <input type="hidden" name="txtId" value="<?= $time->time_id?>">
-                        <input type="submit" value="cadastrar" class="btn cad">
+                        <input type="submit" value="atualizar" class="btn cad">
                         <input type="reset" value="limpar" class="btn limpar">
                   </form>
               </div>

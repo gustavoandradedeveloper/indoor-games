@@ -1,4 +1,4 @@
- <?php 
+<?php 
     session_start();
     $listaJogadores = $_SESSION['listaJogadores'];
    
@@ -24,10 +24,9 @@
                 <div class="header-menu">
                     <nav>
                         <ul>
-                            <li><a href="../../index.php">Home</a> <span> | </span></li>
+                            <li><a href="index.php">Listar</a> <span> | </span></li>
                             <li><a href="../../controllers/JogadorController.php?menu=cadastro">cadastrar</a><span> | </span></li>
-                            <li><a href="list.php">editar</a>|</li>
-                            <li><a href="del.php">excluir</a></li>
+                            <li><a href="edit.php">editar</a></li>
                         </ul>
                     </nav> 
                 </div>
@@ -44,6 +43,7 @@
                                 <th>Nome</th>
                                 <th>CPF</th>
                                 <th>Time</th>
+                                <th>Alterar</th>
                             </tr>
                         </thead>
 
@@ -54,6 +54,9 @@
                                 <td><?= $jogador->jogador_nome?></td>
                                 <td><?= $jogador->jogador_cpf?></td>
                                 <td><?= $jogador->time_nome?></td>
+                                <td>
+                                    <a href="<?php echo"../../controllers/JogadorController.php?menu=buscarPorId&jogadorId=".$jogador->jogador_id?>"class="btn-editar">EDITAR</a>
+                                </td>
                             </tr>
                         <?php }?>
                         </tbody>
