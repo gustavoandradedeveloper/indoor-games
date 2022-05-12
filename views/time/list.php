@@ -28,8 +28,7 @@
                         <ul>
                             <li><a href="../../index.php">Home</a> <span> | </span></li>
                             <li><a href="add.php">cadastrar</a><span> | </span></li>
-                            <li><a href="list.php">editar</a><span> | </span></li>
-                            <li><a href="del.php">excluir</a></li>
+                            <li><a href="../../controllers/TimeController.php?menu=listar">excluir</a></li>
                         </ul>
                     </nav> 
                 </div>
@@ -43,6 +42,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nome</th>
+                                <th >Alterar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -53,6 +53,9 @@
                                     </td>
                                     <td>
                                         <?= $time->time_nome?>
+                                    </td>
+                                    <td>
+                                        <a href="<?php echo"../../controllers/TimeController.php?menu=editar&timeId=".$time->time_id?>"class="btn-editar">Editar</a>
                                     </td>
                                 </tr>
                             <?php }?>

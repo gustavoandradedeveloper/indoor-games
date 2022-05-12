@@ -26,7 +26,7 @@
                         <ul>
                             <li><a href="index.php">Listar</a> <span> | </span></li>
                             <li><a href="../../controllers/JogadorController.php?menu=cadastro">cadastrar</a><span> | </span></li>
-                            <li><a href="edit.php">editar</a></li>
+                            <li><a href="del.php">excluir</a></li>
                         </ul>
                     </nav> 
                 </div>
