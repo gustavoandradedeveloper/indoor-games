@@ -13,3 +13,23 @@ create table jogadores(
     foreign key (jogador_time_id) references times(time_id)
 );
 
+
+create table usuarios(
+	usuario_id int not null AUTO_INCREMENT PRIMARY KEY,
+	usuario_cpf varchar(50) not null,
+	usuario_nome varchar(150)not null,
+	usuario_email varchar(150)not null,
+	usuario_senha varchar(100)not null,
+    usuario_status tinyint not null default 0,
+    usuario_perfil_acesso tinyint default 0,
+    createat datetime default current_timestamp,
+    updateat datetime on update current_timestamp,
+    deleteat datetime 
+);
+
+
+describe usuarios;
+
+
+update usuarios set usuario_perfil_acesso = 2 where usuario_id = 1;
+select * from usuarios;
