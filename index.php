@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,7 +24,7 @@
                             <li><a href="index.php">Home</a></li>
                             <li><a href="controllers/TimeController.php?menu=listar">Times</a></li>
                             <li><a href="controllers/JogadorController.php?menu=listar">Jogadores</a></li>
-                           <!--  <li><a href="controllers/logoff.php">login</a></li> -->
+                            <li><a href="views/login/index.php">login</a></li> 
                         </ul>
                     </div>
                 </div>

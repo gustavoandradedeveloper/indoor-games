@@ -22,9 +22,9 @@ create table usuarios(
 	usuario_senha varchar(100)not null,
     usuario_status tinyint not null default 0,
     usuario_perfil_acesso tinyint default 0,
-    createat datetime default current_timestamp,
-    updateat datetime on update current_timestamp,
-    deleteat datetime 
+    created_at datetime not null default current_timestamp,
+    updated_at datetime default current_timestamp on update current_timestamp,
+    deleted_at datetime
 );
 
 
